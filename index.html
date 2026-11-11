@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#faf9f6" />
+    <title>WORDLE｜每日五字挑戰</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header>
+        <div class="brand">
+          <span class="brand-icon" aria-hidden="true">W</span>
+          <div>
+            <h1>WORDLE</h1>
+            <p>每天五個字母，一點新發現。</p>
+          </div>
+        </div>
+        <nav aria-label="遊戲工具">
+          <button id="help" aria-label="遊戲說明">? <span>說明</span></button
+          ><button id="stats" aria-label="統計資料">▥ <span>統計</span></button
+          ><button id="settings" aria-label="遊戲設定">
+            ⚙ <span>設定</span>
+          </button>
+        </nav>
+      </header>
+      <main>
+        <div class="mode-tabs" aria-label="遊戲模式">
+          <button id="daily" aria-pressed="true">
+            每日挑戰 <small>DAILY</small></button
+          ><button id="practice" aria-pressed="false">
+            無限練習 <small>PRACTICE</small>
+          </button>
+        </div>
+        <section class="game-heading">
+          <div>
+            <p class="eyebrow" id="mode-label">每天一道，全世界一起猜</p>
+            <h2 id="game-title">今日的五字謎題</h2>
+          </div>
+          <span class="date-badge" id="date"></span>
+        </section>
+        <p class="intro">
+          猜出隱藏的英文單字，你有 <strong>6 次</strong>機會。
+        </p>
+        <div id="message" role="status" aria-live="polite">正在載入單字…</div>
+        <div id="board" role="group" aria-label="六次猜測，每次五個字母"></div>
+        <div class="legend">
+          <span><i class="correct"></i>位置正確</span
+          ><span><i class="present"></i>位置不同</span
+          ><span><i class="absent"></i>沒有此字母</span>
+        </div>
+        <div id="keyboard" aria-label="虛擬鍵盤"></div>
+        <div class="actions">
+          <button id="share" hidden>↗ 複製結果</button
+          ><button id="restart" hidden>再玩一次 →</button>
+        </div>
+        <div class="daily-note">
+          <span id="countdown"></span><small>以台灣時間 UTC+8 更新</small>
+        </div>
+      </main>
+      <footer>
+        <span>一個單字，六次可能。</span><span>用好奇心，開啟每一天。</span>
+      </footer>
+    </div>
+    <dialog id="modal" aria-labelledby="modal-title">
+      <div class="dialog-head">
+        <h2 id="modal-title"></h2>
+        <button id="close-modal" aria-label="關閉視窗">✕</button>
+      </div>
+      <div id="modal-content"></div>
+    </dialog>
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>
